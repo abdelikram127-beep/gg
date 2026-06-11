@@ -8,48 +8,48 @@ const INITIAL_TIMELINE: TimelineEvent[] = [
   {
     id: 't1',
     time: '20:30',
-    title: 'الوصول إلى المنزل والاسترخاء',
-    desc: 'الوصول للمنزل، تبديل الملابس وغسل اليدين والوجه بالماء لتهدئة البشرة، والاسترخاء من عناء اليوم.',
+    title: 'الوصول إلى المنزل واستعادة الراحة 🏡✨',
+    desc: 'خلع ضغوط العمل، تبديل الملابس بغسيل وجهكِ بالماء ومستحضرات الترطيب الخفيفة لتبديد توتر اليوم.',
     completed: false,
     category: 'home'
   },
   {
     id: 't2',
     time: '20:45',
-    title: 'تجهيز وتناول عشاء خفيف مريح',
-    desc: 'تناول عشاء صحي غني بالبروتين والدهون الصحية ومضادات الأكسدة المغذية للبشرة وعضلاتك.',
+    title: 'تحضير عشاء خفيف مفعم بالجمال والصحة 🥗🍓',
+    desc: 'تناول وجبة متوازنة غنية بالفيتامينات، مضادات الأكسدة والبروتين المغذي لترميم مرونة الجلد وألياف الجسم.',
     completed: false,
     category: 'home'
   },
   {
     id: 't3',
     time: '21:15',
-    title: 'تنفيذ روتين رياضة الجسم (Sport Body)',
-    desc: 'بدء تمارين الاستطالة، شد الجسم وتنشيط الدورة الدموية من قائمة التمارين المقترحة.',
+    title: 'حصة اللياقة وتعديل قوام الأنوثة (Sport Body) 🧘‍♀️💪',
+    desc: 'ممارسة تمارين استطالة وفقرات الظهر لتصحيح الانحناء وتنشيط الدورة الدموية من قائمتنا التفاعلية.',
     completed: false,
     category: 'sport'
   },
   {
     id: 't4',
     time: '21:50',
-    title: 'الاستحمام المنعش بماء دافئ',
-    desc: 'أخذ حمام دافئ لتخفيف التوتر العضلي وفتح مسام البشرة استعداداً للمساج والمستحضرات المغذية.',
+    title: 'دُش دافئ للاستحمام والاسترخاء العضلي 🛀🌸',
+    desc: 'حمام دافئ يُزيل حمض اللاكتيك ويريح الظهر والكتفين، مع فتح مسام الوجه استعداداً لذروة العناية المسائية.',
     completed: false,
     category: 'home'
   },
   {
     id: 't5',
     time: '22:10',
-    title: 'روتين مساج البشرة والوجه (Skin Massage)',
-    desc: 'استخدام الزيوت الطبيعية المناسبة والقيام بحركات مساج الوجه، الرقبة والفك لمحاربة التجاعيد والتوتر العضلي.',
+    title: 'يوغا وتدليك الوجه الساحر (Skin Massage) 💆‍♀️💖',
+    desc: 'تطبيق روتين تدليك البشرة بالزيوت المغذية لنحت عظمتي الوجنتين والفك ومحاربة انتفاخ محيط العين تماماً.',
     completed: false,
     category: 'skin_massage'
   },
   {
     id: 't6',
     time: '22:45',
-    title: 'فصل الأجهزة الرقمية والتحضير للغفو',
-    desc: 'أخذ بضع دقائق للتأمل أو القراءة الخفيفة لتهدئة العقل والحصول على نوم عميق لعملية تجديد خلايا البشرة الطبيعية.',
+    title: 'هالات الغسق والنوم العميق السري 🌙💤',
+    desc: 'فصل الشاشات، وإتاحة الفرصة للميلاتونين لإتمام عملية تجديد خلايا بشرتكِ وبناء جهازك المناعي أثناء الغفو.',
     completed: false,
     category: 'home'
   }
@@ -120,7 +120,7 @@ export default function HomeTimeline() {
   const getCategoryIcon = (cat: string) => {
     switch (cat) {
       case 'sport':
-        return <Dumbbell className="w-5 h-5 text-indigo-500" />;
+        return <Dumbbell className="w-5 h-5 text-rose-500" />;
       case 'skin_massage':
         return <Sparkles className="w-5 h-5 text-pink-500" />;
       default:
@@ -129,55 +129,65 @@ export default function HomeTimeline() {
   };
 
   const getCategoryBg = (cat: string, active: boolean) => {
-    if (!active) return 'bg-[#F2EDE4] border-[#E8E2D9] text-[#8C847E]';
+    if (!active) return 'bg-[#FFEBF0] border-[#FFC2D1] text-[#9E7480]';
     switch (cat) {
       case 'sport':
-        return 'bg-natural-primary/10 border-natural-primary/20 text-natural-primary';
+        return 'bg-rose-100 border-rose-300 text-rose-600 font-extrabold';
       case 'skin_massage':
-        return 'bg-natural-green/80 border-natural-border text-natural-primary';
+        return 'bg-gradient-to-r from-pink-100 to-rose-100 border-pink-300 text-pink-600 font-extrabold';
       default:
-        return 'bg-natural-light border-natural-border text-natural-text';
+        return 'bg-amber-50 border-amber-200 text-amber-700 font-extrabold';
     }
   };
 
+
   return (
-    <div className="bg-white rounded-[32px] p-8 border border-natural-border shadow-xs" id="timeline-card">
+    <div className="bg-white/95 backdrop-blur-md rounded-[32px] p-8 border-2 border-natural-border shadow-premium relative overflow-hidden" id="timeline-card">
+      {/* Absolute cute backgrounds background glows */}
+      <div className="absolute top-0 right-0 w-24 h-24 bg-pink-300/10 rounded-full blur-[40px] pointer-events-none"></div>
+
       {/* Header Info */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-natural-border pb-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-natural-border/70 pb-6 relative z-10">
         <div>
-          <h2 className="text-2xl font-bold text-natural-heading flex items-center gap-2.5">
-            <Clock className="w-6 h-6 text-natural-primary" />
-            روتين جدول العودة للمنزل (بدءاً من 20:30)
+          <h2 className="text-2xl font-black text-natural-heading flex items-center gap-2.5">
+            <span className="p-2 bg-gradient-to-tr from-natural-primary to-rose-400 text-white rounded-xl shadow-glow-pink">
+              <Clock className="w-5 h-5 animate-pulse" />
+            </span>
+            جدول رونق المسائي التفاعلي ⏰✨
           </h2>
-          <p className="text-sm text-natural-muted mt-1.5 font-medium">
-            مخطط زمني للمهام المرتبة لضمان عشاء مغذي، تمارين مفيدة ومساج حكيم للبشرة.
+          <p className="text-sm text-natural-muted mt-2 font-semibold">
+            دليلكِ الزمني المنظم والممتع لتنظيم العودة المنزلية والبدء ببرنامج غني بالصحة والدلال.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center bg-natural-light rounded-2xl px-6 py-4 text-center shadow-xs border border-natural-border w-full md:w-auto">
-          <div className="flex items-center gap-2 text-sm text-natural-primary font-bold">
-            <span className="w-2.5 h-2.5 bg-natural-primary rounded-full animate-ping"></span>
-            الوقت الحالي: {currentTimeStr || '--:--'}
+        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-natural-light to-white rounded-[20px] px-6 py-4.5 text-center shadow-xs border border-natural-border w-full md:w-auto relative overflow-hidden">
+          <div className="flex items-center gap-2 text-sm text-natural-primary font-black">
+            <span className="w-3 h-3 bg-natural-primary rounded-full animate-ping"></span>
+            ساعة رونق الآن: {currentTimeStr || '--:--'} 🌙
           </div>
-          <div className="text-xs text-natural-muted font-bold mt-1.5">{timeUntilArrival}</div>
+          <div className="text-[11px] text-[#A25F70] font-extrabold mt-2 font-sans tracking-wide bg-white/80 px-2.5 py-1 rounded-full border border-pink-100">{timeUntilArrival}</div>
         </div>
       </div>
 
       {/* Progress Bar */}
-      <div className="mb-8 p-4.5 bg-natural-bg border border-natural-border rounded-2xl">
-        <div className="flex justify-between text-sm font-bold mb-2">
-          <span className="text-natural-text">إنجاز الروتين المسائي</span>
-          <span className="text-natural-primary">{progressPercent}% ({completedCount} من {events.length})</span>
+      <div className="mb-10 p-5 bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-100 rounded-3xl shadow-xs">
+        <div className="flex justify-between text-xs sm:text-sm font-extrabold mb-2.5">
+          <span className="text-natural-text flex items-center gap-1.5">
+            <span>✨ نسبة اكتمال جدول دلالكِ الليلة:</span>
+          </span>
+          <span className="text-natural-primary font-black bg-white px-3 py-1 rounded-full border border-pink-100 shadow-2xs">
+            {progressPercent}% ({completedCount} من {events.length} مهام)
+          </span>
         </div>
-        <div className="w-full bg-natural-light rounded-full h-2.5 border border-natural-border/40">
+        <div className="w-full bg-pink-100/60 rounded-full h-3 border border-pink-200/50">
           <div 
-            className="bg-natural-primary h-2.5 rounded-full transition-all duration-500" 
+            className="bg-gradient-to-r from-pink-400 via-rose-500 to-natural-primary h-all rounded-full h-full transition-all duration-700 shadow-md" 
             style={{ width: `${progressPercent}%` }}
           ></div>
         </div>
       </div>
 
       {/* Timeline Tree */}
-      <div className="relative border-r-2 border-natural-border mr-4 md:mr-6 pl-2 space-y-6">
+      <div className="relative border-r-2 border-pink-200 mr-4 md:mr-6 pl-2 space-y-7">
         {events.map((ev, index) => (
           <motion.div 
             key={ev.id}
@@ -185,31 +195,31 @@ export default function HomeTimeline() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.08 }}
             className={`relative flex flex-col md:flex-row md:items-start gap-4 md:gap-6 pr-6 ${
-              ev.completed ? 'opacity-70' : ''
+              ev.completed ? 'opacity-65' : ''
             }`}
           >
-            {/* Timeline dot */}
-            <div className={`absolute right-[-9px] top-1.5 w-4.5 h-4.5 rounded-full border-4 flex items-center justify-center transition-colors ${
+            {/* Timeline dot with glowing effect */}
+            <div className={`absolute right-[-10px] top-1.5 w-5 h-5 rounded-full border-4 flex items-center justify-center transition-all ${
               ev.completed 
-                ? 'bg-natural-primary border-natural-light' 
-                : 'bg-white border-natural-primary'
+                ? 'bg-natural-primary border-pink-100 ring-2 ring-natural-primary/20 scale-110' 
+                : 'bg-white border-natural-primary ring-2 ring-pink-200/50 hover:scale-110'
             }`}>
               <span className={`w-1.5 h-1.5 rounded-full ${ev.completed ? 'bg-white' : 'bg-natural-primary'}`}></span>
             </div>
 
             {/* Time label */}
-            <div className="min-w-[70px] text-right">
-              <span className="inline-flex items-center gap-1 font-mono text-xs font-bold px-2.5 py-1.5 bg-natural-light text-natural-text rounded-lg border border-natural-border">
-                <Clock className="w-3.5 h-3.5 text-natural-primary" />
+            <div className="min-w-[80px] text-right">
+              <span className="inline-flex items-center gap-1 font-mono text-xs font-black px-3 py-1.5 bg-gradient-to-br from-pink-50 to-white text-natural-text rounded-xl border border-pink-200/80 shadow-2xs">
+                <Clock className="w-3.5 h-3.5 text-natural-primary shrink-0" />
                 {ev.time}
               </span>
             </div>
 
-            {/* Content box */}
-            <div className={`flex-1 p-5 rounded-2xl border transition-all duration-200 ${
+            {/* Content box with beautiful boutique style */}
+            <div className={`flex-1 p-5 rounded-3xl border-2 transition-all duration-300 ${
               ev.completed 
-                ? 'bg-natural-bg/50 border-natural-border text-natural-muted' 
-                : 'bg-white border-natural-border shadow-xs hover:border-natural-primary'
+                ? 'bg-rose-50/40 border-pink-150 text-[#8E6974]' 
+                : 'bg-white border-pink-100 shadow-premium hover:border-natural-primary hover:shadow-glow-pink hover:scale-[1.01]'
             }`}>
               <div className="flex justify-between items-start gap-4">
                 <div>
